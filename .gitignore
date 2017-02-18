@@ -1,5 +1,8 @@
 # node reference
-node_modules
+node_modules/
+.idea/
+.vscode/
+dist/*
 
 # Logs
 logs
