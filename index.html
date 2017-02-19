@@ -2,15 +2,22 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>
-        <%= htmlWebpackPlugin.options.title %>
-    </title>
-    <script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+  <meta charset="UTF-8">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+  <script type="text/javascript">
+    <%= compilation.assets[htmlWebpackPlugin.files.chunks.main.entry.subst(htmlWebpackPlugin.files.publicPath.length.source() %>
+  </script>
 </head>
 
 <body>
-    <h3>This is a Webpack Config Test Page.</h3>
+  <h3>This is a Webpack Config Test Page.</h3>
+  <% for(var k in htmlWebpackPlugin.files.chunks) { %>
+    <% if(k !== 'main') { %>
+      <script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks[k].entry %>"></script>
+      <% } %>
+        <% } %>
 </body>
 
 </html>

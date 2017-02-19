@@ -2,7 +2,7 @@
 node_modules/
 .idea/
 .vscode/
-dist/*
+dist/
 
 # Logs
 logs

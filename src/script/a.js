@@ -1,1 +1,1 @@
-function app() {}
+function app() { return {} }

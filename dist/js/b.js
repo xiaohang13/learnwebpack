@@ -71,7 +71,7 @@
 /* 1 */
 /***/ (function(module, exports) {
 
-function app() {}
+function app() { return {} }
 
 /***/ })
 /******/ ]);
