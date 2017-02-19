@@ -5,7 +5,7 @@ var webpack = require('webpack');
 module.exports = {
   entry: './src/script/app.js',
   output: {
-    path: './dist',
+    path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].bundle.js'
   },
   module: {
@@ -23,12 +23,25 @@ module.exports = {
       // 处理CSS文件
       {
         test: /\.css$/,
-        loader: ['style-loader', 'css-loader', 'postcss-loader']
+        loaders: ['style-loader', 'css-loader', 'postcss-loader']
       },
       // 处理less文件
       {
         test: /\.less$/,
         loader: 'style-loader!css-loader!postcss-loader!less-loader'
+      },
+      // 处理html文件
+      {
+        test: /\.html$/,
+        loader: 'html-loader'
+      },
+      // 处理图片文件
+      {
+        test: /\.(png|jpg|gif|svg)$/i,
+        loaders: [
+          'file-loader?name=asserts/[hash:8].[ext]',
+          'image-webpack-loader'
+          ]
       }
     ]
   },

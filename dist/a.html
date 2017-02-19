@@ -1,104 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>
-        webpack is a page
-    </title>
-    <script type="text/javascript">
-        /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
-/******/ 			return installedModules[moduleId].exports;
-
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-
-
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-
-/******/ 	// identity function for calling harmony imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
-
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "http://www.nfmedia.com";
-
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
-/******/ })
-/************************************************************************/
-/******/ ({
-
-/***/ 3:
-/***/ (function(module, exports) {
-
-function hello() {
-    return {}
-}
-
-/***/ })
-
-/******/ });
-    </script>
-</head>
-
-<body>
-    <h3>This is a Webpack Config Test Page.</h3>
-    
-        
-                
-        
-            <script type="text/javascript" src="http://www.nfmedia.com/js/a.js"></script>
-            
-                
-</body>
-
-</html>
+Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Module build failed: SyntaxError: Unexpected token )
+  
+  - Function
+  
+  - lodash.js:14843 
+    [webpack]/[.4.17.4@lodash]/lodash.js:14843:16
+  
+  - lodash.js:494 apply
+    [webpack]/[.4.17.4@lodash]/lodash.js:494:27
+  
+  - lodash.js:15227 
+    [webpack]/[.4.17.4@lodash]/lodash.js:15227:16
+  
+  - lodash.js:496 apply
+    [webpack]/[.4.17.4@lodash]/lodash.js:496:27
+  
+  - lodash.js:6600 
+    [webpack]/[.4.17.4@lodash]/lodash.js:6600:16
+  
+  - lodash.js:14842 Function.template
+    [webpack]/[.4.17.4@lodash]/lodash.js:14842:20
+  
+  
+  - SyntaxError: Unexpected token )
+  
+  - compiler.js:76 
+    [webpack]/[.2.28.0@html-webpack-plugin]/lib/compiler.js:76:16
+  
+  - Compiler.js:280 Compiler.<anonymous>
+    [webpack]/[.2.2.1@webpack]/lib/Compiler.js:280:10
+  
+  - Compiler.js:480 
+    [webpack]/[.2.2.1@webpack]/lib/Compiler.js:480:13
+  
+  - Tapable.js:138 next
+    [webpack]/[.0.2.6@tapable]/lib/Tapable.js:138:11
+  
+  - CachePlugin.js:62 Compiler.<anonymous>
+    [webpack]/[.2.2.1@webpack]/lib/CachePlugin.js:62:5
+  
+  - Tapable.js:142 Compiler.applyPluginsAsyncSeries
+    [webpack]/[.0.2.6@tapable]/lib/Tapable.js:142:13
+  
+  - Compiler.js:477 
+    [webpack]/[.2.2.1@webpack]/lib/Compiler.js:477:10
+  
+  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
+    [webpack]/[.0.2.6@tapable]/lib/Tapable.js:131:46
+  
+  - Compilation.js:640 self.applyPluginsAsync.err
+    [webpack]/[.2.2.1@webpack]/lib/Compilation.js:640:19
+  
+  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
+    [webpack]/[.0.2.6@tapable]/lib/Tapable.js:131:46
+  
+  - Compilation.js:631 self.applyPluginsAsync.err
+    [webpack]/[.2.2.1@webpack]/lib/Compilation.js:631:11
+  
+  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
+    [webpack]/[.0.2.6@tapable]/lib/Tapable.js:131:46
+  
+  - Compilation.js:626 self.applyPluginsAsync.err
+    [webpack]/[.2.2.1@webpack]/lib/Compilation.js:626:10
+  
+  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
+    [webpack]/[.0.2.6@tapable]/lib/Tapable.js:131:46
+  
+  - Compilation.js:622 sealPart2
+    [webpack]/[.2.2.1@webpack]/lib/Compilation.js:622:9
+  
+  - Tapable.js:131 Compilation.applyPluginsAsyncSeries
+    [webpack]/[.0.2.6@tapable]/lib/Tapable.js:131:46
+  
+  - Compilation.js:570 Compilation.seal
+    [webpack]/[.2.2.1@webpack]/lib/Compilation.js:570:8
+  
+  - Compiler.js:474 
+    [webpack]/[.2.2.1@webpack]/lib/Compiler.js:474:16
+  
+  - Tapable.js:225 
+    [webpack]/[.0.2.6@tapable]/lib/Tapable.js:225:11
+  
+  - Compilation.js:472 _addModuleChain
+    [webpack]/[.2.2.1@webpack]/lib/Compilation.js:472:11
+  
+  - Compilation.js:443 processModuleDependencies.err
+    [webpack]/[.2.2.1@webpack]/lib/Compilation.js:443:13
+  
+  - next_tick.js:67 _combinedTickCallback
+    internal/process/next_tick.js:67:7
+  
+  - next_tick.js:98 process._tickCallback
+    internal/process/next_tick.js:98:9
+  
+</pre>
