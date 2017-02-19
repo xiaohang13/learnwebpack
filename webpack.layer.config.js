@@ -1,5 +1,6 @@
 var htmlwebpackplugin = require('html-webpack-plugin');
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   entry: './src/script/app.js',
@@ -8,7 +9,7 @@ module.exports = {
     filename: 'js/[name].bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       // 处理js中出现的es6语法
       {
         test: /\.js$/,
@@ -18,6 +19,16 @@ module.exports = {
         query: {
           presets: ["latest"]
         }
+      },
+      // 处理CSS文件
+      {
+        test: /\.css$/,
+        loader: ['style-loader', 'css-loader', 'postcss-loader']
+      },
+      // 处理less文件
+      {
+        test: /\.less$/,
+        loader: 'style-loader!css-loader!postcss-loader!less-loader'
       }
     ]
   },
@@ -32,5 +43,14 @@ module.exports = {
       // 通过webpack可在html中直接引入title变量
       title: 'webpack is good'
     }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        postcss: function() {
+          return [require('autoprefixer')({
+            broswers: ['last 5 versions']
+          })]
+        }
+      }
+    })
   ]
 }
